@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime, timedelta
 from twilio.rest import Client
+import os
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -8,8 +9,8 @@ COMPANY_NAME = "Tesla Inc"
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
-account_sid = "ACe7c47c05a4ff053b1a09f45e73d674a9"
-auth_token = '388a88d846117d6be23b185f5a86e1d0'
+account_sid = os.environ["ACCOUNT_SID"]
+auth_token = os.environ["AUTH_TOKEN"]
 
 today = datetime.today()
 yesterday = today - timedelta(days=1)
