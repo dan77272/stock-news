@@ -39,7 +39,7 @@ if difference_percentage > 0.01:
     message = client.messages \
         .create(
         body=f"Tesla Stock News: {latest_articles[0]['description']} {latest_articles[0]['url']}",
-        from_='+13346335468',
-        to='+12267574312'
+        from_=PHONE_NUMBER,
+        to=PHONE_NUMBER2
     )
     print(message.status)
